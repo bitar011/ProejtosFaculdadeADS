@@ -10,7 +10,7 @@ else:
     print("Recomendamos o emocionante FILME 3")
 
 #Verifica ingressos disponíveis
-quantidade_ingressos = 1190
+quantidade_ingressos = 10
 if quantidade_ingressos > 0:
     print("Ingressos estão disponníveis! Divirta-se no cinema!")
 else:
