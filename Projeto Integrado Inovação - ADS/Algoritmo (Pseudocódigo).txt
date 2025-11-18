@@ -1,0 +1,39 @@
+ALGORITMO Fila_Atendimento_Clinica
+INICIO
+    // Declaração da estrutura da fila (Vetor para 3 posições)
+    DECLARAR fila_pacientes[3] COMO TEXTO
+    DECLARAR fila_cpfs[3] COMO TEXTO
+    
+    // 1. Inserir 3 pacientes (Entrada de dados)
+    ESCREVA "--- CHEGADA DE PACIENTES ---"
+    PARA i DE 0 A 2 FAÇA
+        ESCREVA "Digite o nome do paciente ", i+1, ": "
+        LEIA fila_pacientes[i]
+        ESCREVA "Digite o CPF do paciente ", i+1, ": "
+        LEIA fila_cpfs[i]
+    FIM_PARA
+    
+    // Mostra a fila cheia
+    ESCREVA "Fila atual: ", fila_pacientes[0], ", ", fila_pacientes[1], ", ", fila_pacientes[2]
+    
+    // 2. Remover o primeiro paciente (Atendimento)
+    ESCREVA "--- CHAMANDO PRÓXIMO PACIENTE ---"
+    ESCREVA "Atendendo paciente: ", fila_pacientes[0]
+    
+    // "Move" a fila (o segundo vira o primeiro, o terceiro vira o segundo)
+    fila_pacientes[0] <- fila_pacientes[1]
+    fila_cpfs[0] <- fila_cpfs[1]
+    
+    fila_pacientes[1] <- fila_pacientes[2]
+    fila_cpfs[1] <- fila_cpfs[2]
+    
+    // Limpa a última posição
+    fila_pacientes[2] <- ""
+    fila_cpfs[2] <- ""
+    
+    // 3. Mostrar quem ainda está na fila
+    ESCREVA "--- PACIENTES AGUARDANDO ---"
+    ESCREVA "1º da fila: ", fila_pacientes[0]
+    ESCREVA "2º da fila: ", fila_pacientes[1]
+    
+FIM_ALGORITMO
